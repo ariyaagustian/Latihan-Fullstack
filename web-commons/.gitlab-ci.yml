@@ -1,0 +1,34 @@
+stages:
+  - test
+  - build
+  - package
+  - deploy
+
+cache:
+  paths:
+    - .m2/repository
+
+code_analys:
+  stage: build
+  script:
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package install sonar:sonar -Dsonar.host.url=$URL_SONAR -Dsonar.login=$AUTH_SONAR -Dmaven.test.failure.ignore=false
+
+deploy_snapshot:
+  stage: deploy
+  script:
+    - 'mvn clean install deploy'
+  only:
+    - /-snapshot$/
+  artifacts:
+    paths:
+      - target/*.jar
+
+deploy_releash:
+  stage: deploy
+  script:
+    - 'mvn clean install deploy'
+  only:
+    - /-release$/
+  artifacts:
+    paths:
+      - target/*.jar
