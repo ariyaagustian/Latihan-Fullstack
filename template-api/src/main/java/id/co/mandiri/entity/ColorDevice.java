@@ -21,11 +21,11 @@ import java.util.List;
 
 public class ColorDevice {
 
-    public ColorDevice(String id, String name, String code, String description) {
+    public ColorDevice(String id, String name,  String description, String code) {
         this.id = id;
         this.name = name;
-        this.color_code = code;
         this.description = description;
+        this.color_code = code;
     }
 
     @Id
