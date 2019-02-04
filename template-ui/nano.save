@@ -1,0 +1,246 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+import { InstitutesService } from './institutes.service';
+import { Router } from '@angular/router';
+import { Institutes } from '../../../_model/institutes';
+
+@Component({
+  selector: 'app-institutes',
+  templateUrl: './institutes.component.html'
+})
+export class InstitutesComponent implements OnInit {
+
+  searchBox: FormGroup;
+
+  //additional variable
+  idDelete: number;
+
+  @Vimport { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MaritalStatus } from '../../../_model/marital-status';
+import { MaritalStatusService } from './marital-status.service';
+
+@Component({
+  selector: 'app-marital-status',
+  templateUrl: './marital-status.component.html'
+})
+export class MaritalStatusComponent implements OnInit, AfterViewInit {
+
+  //additional variable
+  idDelete: number;
+
+  searchBox: FormGroup;
+
+  @ViewChild(DataTableDirective)
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject();
+
+  constructor(private service: MaritalStatusService, private route: Router) {
+  }
+
+  ngOnInit(): void {
+    const that = this;
+    this.searchBox = new FormGroup(
+      {
+        'description': new FormControl()
+      });
+
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      serverSide: true,
+      searching: false,
+      processing: true,
+      ajax: (dataTablesParameters: any, callback) => {
+        const value: MaritalStatus = this.searchBox.value;
+        that.service.datatables(value, dataTablesParameters).subscribe(resp => {
+          callback({
+            recordsTotal: resp.recordsTotal,
+            recordsFiltered: resp.recordsFiltered,
+            data: resp.data
+          });
+        });
+      },
+      columns: [
+        { data: 'id', title: 'Kode' },
+        { data: 'description', title: 'Keterangan' },
+        {
+          data: 'id', title: 'Action',
+          render: (data: any, type: any, row: any, meta) => {
+            return `<button id="action-update" class="btn btn-warning"><span class="fa fa-edit"/>Edit</button>
+                    <button id="action-remove" class="btn btn-danger"><span class="fa fa-trash"/>Delete</button>
+                    `;
+          }
+        }
+      ],
+      rowCallback: (row: Node, data: MaritalStatus, index: number) => {
+        $('button#action-update'<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-edit"></i>Institutes
+      <div class="card-header-actions">
+        <button class="btn btn-success" routerLink="./new">
+          <i class="fa fa-plus"></i> {{'button.buttonNew'|translate}}
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="searchBox" (submit)="refresh($event)">
+        <div class="form-group">
+          <label for="name">
+            Institute Name
+          </label>
+          <input class="form-control" type="text" name="name" id="name" formControlName="instituteName">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">
+            <i class="fa fa-search"></i> {{'button.buttonSearch'|translate}}
+          </button>
+        </div>
+        
+<button hidden id="openModal" data-toggle="modal" (click)="contohModal.show()" ></button>
+      </form>
+      <hr/>
+      <table datatable width="100%" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+             class="row-border hover table table-bordered table-striped table-sm">
+      </table>
+    </div>
+  </div>
+</div>
+
+<div bsModal id="modal" #contohModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-primary" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Institute</h4>
+        <button type="button" class="close" (click)="contohModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Anda Yakin Ingin Delete Data? </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="contohModal.hide()">{{'button.buttonCancel'|translate}}</button>
+        <button type="button" class="btn btn-danger" (click)="contohModal.hide()" (click)="removed()">{{'button.buttonDelete'|translate}}</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+, row).click(() => {
+          this.route.navigate(['master', 'marital-status', data.id]);
+        });
+        $('button#action-remove', row).click(() => {
+          this.idDelete = data.id;
+          document.getElementById('openModal').click();
+        });
+        return row;
+      }
+    };
+  }
+
+  refresh(data): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      dtInstance.destroy();
+      this.dtTrigger.next();
+    });
+  }
+
+  removed(): void {
+    this.service.remove(this.idDelete).subscribe(data => {
+      if (data.status === 200) {
+        this.refresh(null);
+      }
+    }, error => {
+      console.error(error);
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
+  }
+
+}
+iewChild(DataTableDirective)
+  dtElement: DataTableDirective;
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject();
+
+  constructor(private service: InstitutesService, private route: Router) {
+  }
+
+  ngOnInit(): void {
+    const that = this;
+    this.searchBox = new FormGroup(
+      {
+        'instituteName': new FormControl()
+      });
+
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      serverSide: true,
+      searching: false,
+      processing: true,
+      ajax: (dataTablesParameters: any, callback) => {
+        const value: Institutes = this.searchBox.value;
+        that.service.datatables(value, dataTablesParameters).subscribe(resp => {
+          callback({
+            recordsTotal: resp.recordsTotal,
+            recordsFiltered: resp.recordsFiltered,
+            data: resp.data
+          });
+        });
+      },
+      columns: [
+        { data: 'id', title: 'Kode' },
+        { data: 'instituteName', title: 'Nama Institut' },
+        {
+          data: 'id', title: 'Action',
+          render: (data: any, type: any, row: any, meta) => {
+            return `<button id="action-update" class="btn btn-warning"><span class="fa fa-edit"/>Edit</button>
+                    <button id="action-remove" class="btn btn-danger"><span class="fa fa-trash"/>Delete</button>
+                    `;
+          }
+        }
+      ],
+      rowCallback: (row: Node, data: Institutes, index: number) => {
+        $('button#action-update', row).click(() => {
+          this.route.navigate(['master', 'institutes', data.id]);
+        });
+        $('button#action-remove', row).click(() => {
+          this.idDelete = data.id;
+          document.getElementById('openModal').click();
+        });
+        return row;
+      }
+    };
+  }
+
+  refresh(data): void {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
+      dtInstance.destroy();
+      this.dtTrigger.next();
+    });
+  }
+
+  removed(): void {
+    this.service.remove(this.idDelete).subscribe(data => {
+      if (data.status === 200) {
+        this.refresh(null);
+      }
+    }, error => {
+      console.error(error);
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.dtTrigger.next();
+  }
+
+}

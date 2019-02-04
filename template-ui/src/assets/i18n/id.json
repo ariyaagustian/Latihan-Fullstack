@@ -1,0 +1,90 @@
+{
+  "TESTING": {
+    "Title": "Translation example",
+    "Intro": "Hello I am {{name}}, I am {{age}} years old."
+  },
+  "FORM1": {
+    "Form": "Form",
+    "Title": "Credit Card",
+    "Name": "Name",
+    "CCN": "Credit Card Number",
+    "Month": "Month",
+    "Year": "Year",
+    "CVV": "CVV/CVC",
+    "Table": "Data Table Example"
+  },
+  "HEADER": {
+    "Name": "Integrated Testing Management"
+  },
+  "header": {
+    "name": "Integrated Testing Management"
+  },
+  "SIDEBAR": {
+    "Dashboard": "Dashboard",
+    "Title-Registration": "REGISTRATION",
+    "Registration": "Registration",
+    "Example": "Example"
+  },
+  "BUTTON": {
+    "Modal": "Modal Example",
+    "Alert": "Alert Example"
+  },
+  "modal": {
+    "deleteWarningModal": "Peringatan",
+    "deleteWarningModalDescription": "Apakah anda yakin untuk menghapus data ini?",
+    "titleLogout": "Keluar",
+    "bodyLogout": "Anda yakin ingin keluar?",
+    "titleSessionExpired": "Your session has expired",
+    "bodySessionExpired": "Please login again"
+  },
+  "button": {
+    "buttonSave": "Simpan",
+    "buttonUpdate": "Sunting",
+    "buttonEdit": "Edit",
+    "buttonReset": "Ulang",
+    "buttonDelete": "Hapus",
+    "buttonSearch": "Cari",
+    "buttonDetail": "Detail",
+    "buttonApprove": "Setujui",
+    "buttonReject": "Tolak",
+    "buttonCancel": "Batal",
+    "buttonNext": "Lanjut",
+    "buttonLoad": "Load",
+    "buttonAdd": "Tambah",
+    "buttonRemove": "Hapus",
+    "buttonBrowse": "Telusuri",
+    "buttonZoomIn": "Perbesar",
+    "buttonZoomOut": "Perkecil",
+    "buttonChooseFile": "Pilih Berkas",
+    "buttonAddWorkExperience": "Tambah Pengalaman Kerja",
+    "buttonAddEducations": "Tambah Pendidikan",
+    "buttonAddSkill": "Tambah Kemampuan",
+    "buttonAddLanguage": "Tambah Bahasa",
+    "buttonAddDependent": "Tambah Dependent",
+    "buttonAddEmergencyContact": "Tambah Kontak Darurat",
+    "buttonAddCertification": "Tambah Sertifikasi",
+    "buttonAddNewTraining": "Tambah Pelatihan Baru",
+    "buttonAddNewCertification": "Tambah Sertifikasi Baru",
+    "buttonOptions": "Pilihan",
+    "buttonNew": "Baru"
+  },
+  "master": {
+    "categoryDevice": {
+      "list": {
+        "title": "Kategori Perangkat",
+        "searchLable": "Deskripsi"
+      },
+      "new": {
+        "title": "Kategory Perangkat",
+        "name": "Nama",
+        "description": "Keterangan"
+      },
+      "updated": {
+        "title": "Kategory Perangkat",
+        "id": "ID",
+        "name": "Nama",
+        "description": "Keterangan"
+      }
+    }
+  }
+}

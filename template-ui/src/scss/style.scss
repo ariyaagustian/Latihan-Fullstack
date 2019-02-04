@@ -1,0 +1,75 @@
+// If you want to override variables do it here
+@import "variables";
+// Import styles
+@import "node_modules/@coreui/coreui/scss/coreui";
+// If you want to add something do it here
+@import "custom";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+// Datetime Range Picker
+// @import "~ng-pick-datetime/assets/style/picker.min.css";
+//.dataTables_empty {
+//  display: none;
+//}
+
+ul.topnav-baru {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+}
+
+ul.topnav-baru li {float: left; color: white;}
+
+ul.topnav-baru li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav-baru li a:hover:not(.active) {background-color: rgb(9, 100, 190); color: white;}
+
+ul.topnav-baru li a.active {background-color: rgb(6, 91, 177); color: white;}
+
+ul.topnav-baru li.right {float: right;}
+
+@media screen and (max-width: 600px){
+  ul.topnav-baru li.right,
+  ul.topnav-baru li {float: none;}
+}
+
+table{
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+.spaceLeft {
+  padding-left: 1.5rem;
+}
+
+.mat-row {
+  height: auto;
+}
+
+.mat-cell {
+  padding: 8px 8px 8px 0;
+}
+
+.overflow-datatable{
+  overflow-x: auto;
+}
+
+input {
+  min-width:50px!important;
+  max-width:99.99%!important;
+  transition: width 0.25s;
+}
+
+.is-invalid-custom{
+  color:#dc3545; font-size: 11px;
+}

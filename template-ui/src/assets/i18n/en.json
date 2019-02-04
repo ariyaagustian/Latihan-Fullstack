@@ -1,0 +1,124 @@
+{
+  "TESTING": {
+    "Title": "Translation example",
+    "Intro": "Hello I am {{name}}, I am {{age}} years old."
+  },
+  "FORM1": {
+    "Form": "Form",
+    "Title": "Credit Card",
+    "Name": "Name",
+    "CCN": "Credit Card Number",
+    "Month": "Month",
+    "Year": "Year",
+    "CVV": "CVV/CVC",
+    "Table": "Data Table Example"
+  },
+  "HEADER": {
+    "Name": "Integrated Testing Management"
+  },
+  "header": {
+    "name": "Integrated Testing Management"
+  },
+  "SIDEBAR": {
+    "Dashboard": "Dashboard",
+    "Title-Registration": "REGISTRATION",
+    "Registration": "Registration",
+    "Example": "Example"
+  },
+  "BUTTON": {
+    "Modal": "Modal Example",
+    "Alert": "Alert Example"
+  },
+  "modal": {
+    "deleteWarningModal": "Warning",
+    "deleteWarningModalDescription": "Are you sure to delete this data?",
+    "titleLogout": "Log Out",
+    "bodyLogout": "Are you sure you want to logout?",
+    "titleSessionExpired": "Your session has expired",
+    "bodySessionExpired": "Please login again"
+  },
+  "button": {
+    "buttonSave": "Save",
+    "buttonUpdate": "Update",
+    "buttonEdit": "Edit",
+    "buttonReset": "Reset",
+    "buttonDelete": "Delete",
+    "buttonSearch": "Search",
+    "buttonDetail": "Detail",
+    "buttonApprove": "Approve",
+    "buttonReject": "Reject",
+    "buttonCancel": "Cancel",
+    "buttonNext": "Next",
+    "buttonLoad": "Load",
+    "buttonAdd": "Add",
+    "buttonBrowse": "Browse...",
+    "buttonZoomIn": "Zoom In",
+    "buttonZoomOut": "Zoom Out",
+    "buttonLogout": "Logout",
+    "buttonModal": "Modal",
+    "buttonAddApplicant": "Add Applicant",
+    "buttonInterviewed": "Interviewed",
+    "buttonGoInterview": "Go Interview",
+    "buttonRemove": "Remove",
+    "buttonAddNewTraining": "Add New Training",
+    "buttonAddNewCertification": "Add New Certification",
+    "buttonCancelAssign": "Cancel Assign",
+    "buttonAddResource": "Add Resource",
+    "buttonSubmitAssignment": "Submit Assignment",
+    "buttonExit": "Exit",
+    "buttonSubmit": "Submit",
+    "buttonAddDependent": "Add Dependent",
+    "buttonAddEmergencyContact": "Add Emergency Contact",
+    "buttonAddEmployee": "Add Employee",
+    "buttonAssignResource": "Assign Resource",
+    "buttonPushAssignment": "Push Assignment",
+    "buttonAddWorkExperience": "Add Work Experience",
+    "buttonAddEducations": "Add Educations",
+    "buttonAddSkill": "Add Skill",
+    "buttonAddLanguage": "Add Language",
+    "buttonAddCertification": "Add Certification",
+    "buttonNew": "New",
+    "buttonSaveAsADraft": "Save as a Draft",
+    "buttonSaveAndSend": "Save and Send",
+    "buttonChooseFile": "Choose File",
+    "buttonOptions": "Options"
+  },
+  "master": {
+    "categoryDevice": {
+      "list": {
+        "title": "Category of device",
+        "searchLable": "Description"
+      },
+      "new": {
+        "title": "a Category of Device",
+        "name": "Name",
+        "description": "Description"
+      },
+      "updated": {
+        "title": "a Category of Device",
+        "id": "ID",
+        "name": "Name",
+        "description": "Description"
+      }
+    },
+    "colorDevice": {
+      "list": {
+        "title": "Color of device",
+        "searchLable": "Description"
+      },
+      "new": {
+        "title": "a Color of Device",
+        "name": "Name",
+        "description": "Description",
+        "color_code": "Color Code"
+      },
+      "updated": {
+        "title": "a Color of Device",
+        "id": "ID",
+        "name": "Name",
+        "description": "Description",
+        "color_code": "Color Code"
+      }
+    }
+  }
+}

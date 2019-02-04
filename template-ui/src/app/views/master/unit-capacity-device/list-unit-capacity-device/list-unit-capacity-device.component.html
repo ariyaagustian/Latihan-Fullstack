@@ -1,0 +1,70 @@
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-list"></i> <strong>{{'master.unitCapacityDevice.list.title' | translate}}</strong>
+      <div class="card-header-actions">
+        <button class="btn btn-info text-white" routerLink="./new">
+          <i class="fa fa-plus"></i> {{'button.buttonNew' | translate}}
+        </button>
+
+        <button hidden id="openModal" data-toggle="modal" (click)="contohModal.show()"></button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="container">
+        <form [formGroup]="searchBox" (submit)="refresh($event)">
+          <div class="row">
+            <div class="form-group col-md-7">
+              <label for="name">
+                {{'master.unitCapacityDevice.list.searchLable' | translate}}
+              </label>
+            </div>
+            <div class="form-group col-md-7">
+              <div class="row">
+                &nbsp;&nbsp;&nbsp;
+                <input class="form-control col-sm-5" type="text" name="name" id="name" formControlName="name">
+                <button type="submit" class="btn btn-primary col-sm-2">
+                  <i class="fa fa-search"></i> {{'button.buttonSearch' | translate}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="form-group col-md-12 overflow-datatable">
+        <hr>
+        <table datatable width="100%" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+               class="row-border hover table table-bordered table-striped table-sm">
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL HARUS DI TARUH DI LUAR DARI DIV dengan class="animated fadeIn"-->
+<div bsModal id="modal" #contohModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-primary" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete a Category of device</h5>
+        <button type="button" class="close" (click)="contohModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <p>{{'modal.bodyDelete' | translate}}</p> -->
+        <p>Are you sure you want delete this category?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="contohModal.hide()"><i class="fa fa-close"></i>
+          {{'button.buttonCancel'| translate}}</button>
+        &nbsp;
+        <button type="button" class="btn btn-danger" (click)="contohModal.hide()" (click)="removed()"><i
+          class="fa fa-trash"></i>
+          {{'button.buttonDelete'|translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

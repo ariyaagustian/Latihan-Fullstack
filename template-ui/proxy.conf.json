@@ -1,0 +1,26 @@
+{
+  "/security-management/oauth": {
+    "target": "http://localhost:10000",
+    "secure": false
+  },
+  "/security-management/api": {
+    "target": "http://localhost:10000",
+    "secure": false
+  },
+  "/security-management/menu": {
+    "target": "http://localhost:10000",
+    "secure": false
+  },
+  "/security-management/security": {
+    "target": "http://localhost:10000",
+    "secure": false
+  },
+  "/supporting-device/api": {
+    "target": "http://localhost:10006",
+    "secure": false
+  },
+  "/web-application-face/service": {
+    "target": "http://tabeldata.ip-dynamic.com:8080",
+    "secure": false
+  }
+}

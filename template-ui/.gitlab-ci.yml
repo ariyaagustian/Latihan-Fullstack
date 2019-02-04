@@ -1,0 +1,31 @@
+stages:
+    - build
+    - deploy
+
+cache:
+    paths:
+        - node_modules/
+
+build_localhost:
+    stage: build
+    before_script:
+        - 'npm install'
+    script:
+        - ng build --prod  --base-href /resource-management/  --deploy-url /resource-management/ --aot
+    artifacts:
+        paths:
+            - dist/*
+    only:
+        - master
+    tags:
+        - localhost
+
+deploy_localhost:
+    stage: deploy
+    script:
+        - 'rm -rf /var/www/html/resource-management/*'
+        - 'cp -r dist/* /var/www/html/resource-management/'
+    only:
+        - master
+    tags: 
+        - localhost
